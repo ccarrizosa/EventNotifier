@@ -1,0 +1,28 @@
+#!/bin/bash
+
+start(){
+  ./IPNotifier &
+}
+
+stop(){
+  killall IPNotifier
+}
+
+
+case $1 in
+start)
+  start
+  ;;
+stop)
+  stop
+  ;;
+reload|restart)
+  stop
+  sleep 1
+  start
+  ;;
+*)
+  echo "Usage: $0 {start|stop|restart|reload}"
+  exit 1
+esac
+exit 0
