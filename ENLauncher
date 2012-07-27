@@ -1,22 +1,25 @@
 #!/bin/bash
 
 start(){
-  ./IPNotifier &
+  ./EventNotifier &
 }
 
 stop(){
-  killall IPNotifier
+  killall EventNotifier
 }
 
 
 case $1 in
 start)
+  echo "Starting EventNotifier"
   start
   ;;
 stop)
+  echo "Stopping EventNotifier"
   stop
   ;;
 reload|restart)
+  echo "Restarting EventNotifier"
   stop
   sleep 1
   start
