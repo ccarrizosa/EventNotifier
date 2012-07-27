@@ -1,4 +1,11 @@
 EventNotifier
 =============
 
-Notify connection changes to mail
+EventNotifier is a program aimed to notify connection changes to mail.
+
+Usage
+-----
+Before launching the program, check the configuration file and be sure you write
+the correct email. Each time an event is generated, (external IP changes or the
+connection was lost) an email is sent to the configured address.
+
