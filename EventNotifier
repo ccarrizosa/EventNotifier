@@ -32,7 +32,7 @@ fi
 downTime=''
 
 # Command to get IP
-ipCommand='wget -O - -q http://automation.whatismyip.com/n09230945.asp'
+ipCommand='wget -O - -q http://ipecho.net/plain'
 
 # Get external IP
 lastIP=`$ipCommand`
