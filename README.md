@@ -1,13 +1,13 @@
-EventNotifier
-=============
+IpChangeNotifier
+================
 
-EventNotifier is a program aimed to notify connection changes to mail.
+IpChangeNotifier is a program aimed to notify ip changes to mail.
 
 Usage
 -----
 Before launching the program, check the configuration file and be sure you write
-the correct email. Each time an event is generated, (external IP changes or the
-connection was lost) an email is sent to the configured address.
+the correct email. Each time the external IP changes or the Internet connection 
+is lost and recovered, an email is sent to the configured address.
 
-To launch EventNotifier use the ENLaucher ($ ENLauncher start) or just execute
-directly ($ EventNotifier)
+To launch IpChangeNotifier use the ICNLaucher ($ ICNLauncher start) or just 
+execute directly ($ IpChangeNotifier)

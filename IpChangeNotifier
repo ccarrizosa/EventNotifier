@@ -1,14 +1,13 @@
 #!/bin/bash
 
-# -- EventNotifier --
+# -- IpChangeNotifier --
 # Author: Carlos Carrizosa
-# Last Modified: 25-07-2012
 # Brief: This script sends an email every time the external ip changes
 #        or detects connectivity problems.
 
 # -- Configuration section -- 
 
-configFile=./ENConfig.cfg
+configFile=./ICNConfig.cfg
 
 if [ ! -e "$configFile" ]
 then
@@ -23,7 +22,7 @@ then
 fi
 
 [ -z "$sleepTime" ] && sleepTime=15
-[ -z "$tempFile" ] && tempFile=/tmp/EventNotifierMail.tmp
+[ -z "$tempFile" ] && tempFile=/tmp/IpChangeNotifierMail.tmp
 
 
 # -- Code -- #
@@ -55,7 +54,7 @@ do
       echo "Current IP: $currentIP" >> $tempFile
       date -u >> $tempFile
     
-      cat $tempFile | mail -s "[EventNotifier] IP Changed" $email
+      cat $tempFile | mail -s "[IpChangeNotifier] IP Changed" $email
 
       lastIP=$currentIP
     fi
@@ -67,7 +66,7 @@ do
       echo "Connection was lost at $downTime" >> $tempFile
       echo "Connection recovered at "`date -u` >> $tempFile
 
-      cat $tempFile | mail -s "[EventNotifier] Connection Problem!" $email
+      cat $tempFile | mail -s "[IpChangeNotifier] Connection Problem!" $email
 
       downTime=''
     fi

@@ -1,25 +1,25 @@
 #!/bin/bash
 
 start(){
-  ./EventNotifier &
+  ./IpChangeNotifier &
 }
 
 stop(){
-  killall EventNotifier
+  killall IpChangeNotifier
 }
 
 
 case $1 in
 start)
-  echo "Starting EventNotifier"
+  echo "Starting IpChangeNotifier"
   start
   ;;
 stop)
-  echo "Stopping EventNotifier"
+  echo "Stopping IpChangeNotifier"
   stop
   ;;
 reload|restart)
-  echo "Restarting EventNotifier"
+  echo "Restarting IpChangeNotifier"
   stop
   sleep 1
   start
